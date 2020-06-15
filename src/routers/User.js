@@ -45,6 +45,17 @@ router.post('/user/login', async(req, res)=>{
   }
 })
 
+//get user api  
+router.post('/user/apartment', auth, async(req, res)=>{
+  try{
+    await req.user.save()
+    res.status(200).send(req.user)
+  }catch(e){  
+    res.status(501).send(e)
+  }
+})
+
+
 // user logout api
 router.post('/user/logout', auth, async(req, res)=>{
   try{
