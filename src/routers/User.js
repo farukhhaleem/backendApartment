@@ -92,7 +92,7 @@ router.post('/user/:apartId', auth, async(req, res)=>{
     
     const apartment = req.params.apartId
       req.user.apartmentsOwned = req.user.apartmentsOwned.concat({apartment})
-      const apartment =await Apartment.findByIdAndUpdate({_id: req.params.apartId},{available : false} )
+      // const apartment =await Apartment.findByIdAndUpdate({_id: req.params.apartId},{available : false} )
       await req.user.save()
       res.status(200).send(req.user)
 

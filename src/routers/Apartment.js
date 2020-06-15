@@ -69,7 +69,7 @@ router.post('/apartment/del/:id', auth, async(req, res)=>{
 
 
 //Apartment Modification By id
-router.patch('/apartment/edit/:id', auth, async(req, res)=>{
+router.patch('/apartment/edit/:id', async(req, res)=>{
 
   const updates = Object.keys(req.body)
   const allowedUpdates = ['apartNo', 'apartName', 'floorNo', 'buildingName', 'available']
