@@ -49,7 +49,7 @@ router.post('/user/login', async(req, res)=>{
 router.post('/user/apartment', auth, async(req, res)=>{
   try{
     await req.user.save()
-    res.status(200).send(req.user)
+    res.status(200).send(req.user.apartmentsOwned)
   }catch(e){  
     res.status(501).send(e)
   }
